@@ -1,0 +1,81 @@
+<font face="time new roman">
+    <div class="card container col-sm-12 mt-5">
+        <div class="card-header">
+            <h3 class='text-center'>
+                <i class="fas fa-sign-in-alt mr-2">
+                </i>Nouveau Service
+            </h3>
+        </div>
+        
+        <div class="card-body">
+            <div style="width:1000px; margin:0px auto">
+                <form [formGroup]="putDemandeForm">
+                    <div class="row card">
+                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Type Permission <span
+                                        class="text-danger">*</span></label>
+                                            <select class="form-control" name="typePermission" formControlName="typePermission">
+                                                <option value="">Sectionner type Permission</option>
+                                                <option value="T1">inferieure ou egale a 72 H</option>
+                                                <option value="T2">Superieure a 72 H</option>
+                                                    
+                                            </select>
+                                     
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Duree Demande <span
+                                        class="text-danger"></span></label>
+                                <input type="text" name="dureePermission" required formControlName="dureePermission" 
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Date Debut <span
+                                        class="text-danger"></span></label>
+                                <input type="date" name="dateDebut" required formControlName="dateDebut" 
+                                    class="form-control">
+                            </div>
+                            <!--  -->
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Date fin <span
+                                        class="text-danger"></span></label>
+                                <input type="date" name="dateFin" formControlName="dateFin" 
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="row col-sm-12 mt-3 ms-1">
+                            <div class="form-group col-sm-12">
+                                <label for="nom_service">Libelle <span
+                                        class="text-danger"></span></label>
+                                <textarea name="libelle" rows="10"  formControlName="libelle" 
+                                class="form-control"
+                                placeholder="saisir objet permission">
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <div class="row footer col-sm-12 mt-5 ms-1">
+                            <div class="form-group col-sm-12 text-right">
+                                <button type="submit" (click)="updateDataDemande()" 
+                                    class="btn btn-outline-success col-sm-12">
+                                    <i class="fas fa-check"></i>
+                                    Modifier
+                                </button>
+                            </div>
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</font>
+
+
+

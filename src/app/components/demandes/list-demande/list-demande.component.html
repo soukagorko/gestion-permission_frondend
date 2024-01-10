@@ -1,0 +1,79 @@
+<font face="time new roman">
+    <div class="container col-sm-12 mt-3">
+        <div class="page-header mt-3">
+            <div class="row col-sm-12">
+                <div class="form-group col-sm-10">
+                    <h3 class="card-title">
+                        <span class="badge bg-secondary">Liste
+                            Demandes </span>
+                    </h3>
+                </div>
+                <div class="form-group col-sm-2 text-end">
+                    <a routerLink="/demandes/create" class="text-primary ms-2"> <i class="bi bi-plus"></i>
+                        Nouveau Demandes</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body booking_card">
+                        <div class="table-responsive">
+                            <table id="example"
+                                class="table table-striped table-bordered text-center datatable">
+                                <thead>
+                                    <tr class="text-white" style="background-color: darkgray;">
+                                        <th style="background-color: antiquewhite;">ID</th>
+                                        <th style="background-color: antiquewhite;">DUREE DEMANDE</th>
+                                        <th style="background-color: antiquewhite;">DATE DEMANDE</th>
+                                        <th style="background-color: antiquewhite;">DATE DEBUT</th>
+                                        <th style="background-color: antiquewhite;">DATE FIN</th>
+                                        <th style="background-color: antiquewhite;">ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        *ngFor="let demande of dataDemandes">
+                                        <!-- <td>{{demande.typePermission}}</td> -->
+                                        <td>{{demande.idPermission }}</td>
+                                        <td>{{demande.dureePermission }}</td>
+                                        <td>{{demande.dateDemande  | date: "dd-MM-Y" }}</td>
+                                        <td>{{demande.dateDebut  | date: "dd-MM-Y" }}</td>
+                                        <td>{{demande.dateFin  | date: "dd-MM-Y" }}</td>
+                                        <!-- <td>
+                                            {{demande.libelle }}
+                                        </td> -->
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idPermission}}">
+                                                <i class="bi bi-eye ms-1">
+                                                </i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idPermission}}">
+                                                <i class="bi bi-pencil ms-1">
+                                                </i>
+                                            </button>
+                                            <form action method="post"
+                                                class="d-inline  ms-1">
+                                                <button type="submit"
+                                                    class="btn btn-sm btn-outline-danger"
+                                                    (click)="deleteDemande(demande.idPermission)"
+                                                    href="#"
+                                                    onclick="return confirm('ÊTES-VOUS SUR DE VOULOIR SUPPRIMER CETTE DEMANDE ?')">
+                                                    <i class="bi bi-trash"> </i>
+                                                </button>
+                                            </form>
+                                        </td> 
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+</font>
+
+

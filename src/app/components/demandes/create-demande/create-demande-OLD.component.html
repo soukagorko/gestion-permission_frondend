@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REGISTRE DE MAIN COURANTE</title>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+</head>
+
+<body>
+
+<font face="time new roman">
+    <div class="card container col-sm-12 mt-5">
+        <div class="card-header">
+            <h3 class='text-center'>
+                <i class="fas fa-sign-in-alt mr-2">
+                </i>Nouveau Service
+            </h3>
+        </div>
+        <div class="card-body">
+            <div style="width:800px; margin:0px auto">
+                <!-- <form [formGroup]="postServiceForm"> -->
+                    <div class="row card">
+                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Nom <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" name="nomservice" required formControlName="nomservice" class="form-control"
+                                    placeholder="saisir nom service">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Sigle <span
+                                        class="text-danger"></span></label>
+                                <input type="text" name="sigleservice" required formControlName="sigleservice" 
+                                    class="form-control"
+                                    placeholder="saisir sigle service">
+                            </div>
+                            <!--  -->
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Contact <span
+                                        class="text-danger"></span></label>
+                                <input type="text" name="contactservice" formControlName="contactservice" 
+                                    class="form-control"
+                                    placeholder="saisir contact service">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <!-- <div class="row col-sm-12 mt-3 ms-1">
+                            <div class="form-group col-sm-12">
+                                <label for="nom_service">Description <span
+                                        class="text-danger"></span></label>
+                                <textarea name="descservice"  formControlName="descservice" 
+                                class="form-control"
+                                placeholder="saisir description service">
+                                </textarea>
+                            </div>
+                        </div> -->
+
+                        <div class="col-12 col-sm-12 mt-3 ms-1">
+                            <label class="">Objet</label>
+                            <textarea name="objet_mention" id="objet_mention" cols="30" rows="10">
+                                            </textarea>
+                        </div>
+
+                        <div class="row footer col-sm-12 mt-5 ms-1">
+                            <div class="form-group col-sm-12 text-right">
+                                <button type="submit" (click)="saveNewDemande()" 
+                                    class="btn btn-outline-success col-sm-12">
+                                    <i class="fas fa-check"></i>
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </div>
+                        &nbsp;
+                        &nbsp;
+                    </div>
+                <!-- </form> -->
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--  -->
+<script>
+    $('#objet_mention').summernote({
+        placeholder: 'libelle mention ici...',
+        tabsize: 2,
+        height: 300
+    });
+</script>
+<!--  -->
+</font>
+
+</body>
+</html>
+
+
