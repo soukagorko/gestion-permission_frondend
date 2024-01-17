@@ -9,3 +9,8 @@ npm install --save ngx-summernote summernote jquery
 
 npm install --save ngx-summernote summernote 
 jquery --force or --legacy-peer-deps
+
+
+ng generate module post --routing
+ng update @angular/cli
+ng update @angular/core

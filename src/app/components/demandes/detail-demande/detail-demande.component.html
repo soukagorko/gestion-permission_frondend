@@ -48,7 +48,7 @@
                 <hr/>
 
                 <div class="footer col-sm-12 mt-2 ms-1 text-end">
-                        <button type="submit" 
+                        <button type="submit" (click)="printPage()"
                             class="btn btn-outline-success col-sm-3 text-right">
                             <i class="fas fa-check"></i>
                             Imprimer
@@ -58,6 +58,11 @@
             </div>
 
         </div>
+    </div>
+
+    <div class="form-group col-sm-2 text-end">
+        <a routerLink="/demandes" class="text-primary ms-2"> <i class="bi bi-fast-forward"></i>
+            Retour</a>
     </div>
 </font>
 

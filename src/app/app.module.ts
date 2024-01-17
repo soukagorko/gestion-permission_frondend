@@ -12,12 +12,15 @@ import {
   CreateDemandeComponent,
 } from './components/demandes/create-demande/create-demande.component';
 import {
+  DetailDemandeComponent,
+} from './components/demandes/detail-demande/detail-demande.component';
+import {
   EditDemandeComponent,
 } from './components/demandes/edit-demande/edit-demande.component';
 import {
   ListDemandeComponent,
 } from './components/demandes/list-demande/list-demande.component';
-import { DetailDemandeComponent } from './components/demandes/detail-demande/detail-demande.component';
+import { FormDemandeComponent } from './components/demandes/form-demande/form-demande.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { DetailDemandeComponent } from './components/demandes/detail-demande/det
     CreateDemandeComponent,
     ListDemandeComponent,
     EditDemandeComponent,
-    DetailDemandeComponent
+    DetailDemandeComponent,
+    FormDemandeComponent
   ],
   imports: [
     BrowserModule,

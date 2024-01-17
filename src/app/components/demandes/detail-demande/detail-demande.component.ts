@@ -52,6 +52,10 @@ getDataDemandeById(){
     this.detailDemandeForm.patchValue(res);
   })
 }
+//
+printPage(){
+  window.print();
+}
 
 
 }

@@ -14,6 +14,9 @@ import {
   EditDemandeComponent,
 } from './components/demandes/edit-demande/edit-demande.component';
 import {
+  FormDemandeComponent,
+} from './components/demandes/form-demande/form-demande.component';
+import {
   ListDemandeComponent,
 } from './components/demandes/list-demande/list-demande.component';
 
@@ -25,6 +28,8 @@ const routes: Routes = [
   { path: "demandes/edit/:id", component: EditDemandeComponent},
   { path: "demandes/detail/:id", component: DetailDemandeComponent},
   //
+  { path: "demandes/form", component: FormDemandeComponent},
+
 ];
 
 @NgModule({
