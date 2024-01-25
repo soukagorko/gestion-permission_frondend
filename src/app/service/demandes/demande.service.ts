@@ -39,4 +39,8 @@ export class DemandeService {
     return this.http.put(BASIC_URL + "api/demandes/"+id, demande);
   }
   //
+  //
+  imprimeDemandeById(id: number): Observable<any>{
+    return this.http.get(BASIC_URL + "api/demandes/imprime"+id);
+  }
 }

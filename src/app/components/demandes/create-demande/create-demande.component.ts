@@ -17,12 +17,6 @@ import { DemandeService } from 'src/app/service/demandes/demande.service';
   styleUrls: ['./create-demande.component.css']
 })
 export class CreateDemandeComponent implements OnInit {
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
    //
    postFormDemande!: FormGroup;
    //
@@ -35,12 +29,15 @@ export class CreateDemandeComponent implements OnInit {
    //
    ngOnInit(){
      this.postFormDemande = this.fb.group({
-      typePermission:[null, Validators.required],
+      matricule:[null, Validators.required],
+      prenom:[null, Validators.required],
+      nom:[null, Validators.required],
+      service:[null, Validators.required],
+      grade:[null, Validators.required],
       dureePermission:[null, Validators.required],
-      // dateDemande:[null, Validators.required],
       dateDebut:[null, Validators.required],
-      dateFin:[null, Validators.required],
-      libelle:[null, Validators.required]
+      motif:[null, Validators.required],
+      destination:[null, Validators.required]
      })
    }
    //
