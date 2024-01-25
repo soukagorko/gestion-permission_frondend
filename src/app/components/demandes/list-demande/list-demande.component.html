@@ -24,31 +24,34 @@
                                 <thead>
                                     <tr class="text-white" style="background-color: darkgray;">
                                         <th style="background-color: antiquewhite;">ID</th>
-                                        <th style="background-color: antiquewhite;">DUREE DEMANDE</th>
-                                        <th style="background-color: antiquewhite;">DATE DEMANDE</th>
+                                        <th style="background-color: antiquewhite;">MATRICULE</th>
+                                        <th style="background-color: antiquewhite;">NOM</th>
+                                        <th style="background-color: antiquewhite;">SERVICE</th>
+                                        <th style="background-color: antiquewhite;">DUREE</th>
                                         <th style="background-color: antiquewhite;">DATE DEBUT</th>
-                                        <th style="background-color: antiquewhite;">DATE FIN</th>
                                         <th style="background-color: antiquewhite;">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
                                         *ngFor="let demande of dataDemandes">
-                                        <!-- <td>{{demande.typePermission}}</td> -->
-                                        <td>{{demande.idPermission }}</td>
-                                        <td>{{demande.dureePermission }}</td>
-                                        <td>{{demande.dateDemande  | date: "dd-MM-Y" }}</td>
+                                        <td>{{demande.idDemande }}</td>
+                                        <td>{{demande.matricule }}</td>
+                                        <td>{{demande.prenom }} {{demande.nom }}</td>
+                                        <td>{{demande.service }} </td>
+                                        <td>{{demande.dureePermission }} </td>
                                         <td>{{demande.dateDebut  | date: "dd-MM-Y" }}</td>
-                                        <td>{{demande.dateFin  | date: "dd-MM-Y" }}</td>
-                                        <!-- <td>
-                                            {{demande.libelle }}
-                                        </td> -->
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idPermission}}">
+                                            <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprime/{{demande.idDemande}}">
+                                                <i class="bi bi-printer ms-1">
+                                                </i>
+                                            </button>
+                                            &nbsp;
+                                            <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
                                                 <i class="bi bi-eye ms-1">
                                                 </i>
                                             </button>
-                                            <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idPermission}}">
+                                            <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idDemande}}">
                                                 <i class="bi bi-pencil ms-1">
                                                 </i>
                                             </button>
@@ -56,7 +59,7 @@
                                                 class="d-inline  ms-1">
                                                 <button type="submit"
                                                     class="btn btn-sm btn-outline-danger"
-                                                    (click)="deleteDemande(demande.idPermission)"
+                                                    (click)="deleteDemande(demande.idDemande)"
                                                     href="#"
                                                     onclick="return confirm('ÊTES-VOUS SUR DE VOULOIR SUPPRIMER CETTE DEMANDE ?')">
                                                     <i class="bi bi-trash"> </i>

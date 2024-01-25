@@ -17,6 +17,9 @@ import {
   FormDemandeComponent,
 } from './components/demandes/form-demande/form-demande.component';
 import {
+  ImprimeDemandeComponent,
+} from './components/demandes/imprime-demande/imprime-demande.component';
+import {
   ListDemandeComponent,
 } from './components/demandes/list-demande/list-demande.component';
 
@@ -29,6 +32,8 @@ const routes: Routes = [
   { path: "demandes/detail/:id", component: DetailDemandeComponent},
   //
   { path: "demandes/form", component: FormDemandeComponent},
+  //
+  { path: "demandes/imprime/:id", component: ImprimeDemandeComponent},
 
 ];
 

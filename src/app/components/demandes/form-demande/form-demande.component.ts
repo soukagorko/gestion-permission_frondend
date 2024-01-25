@@ -5,7 +5,11 @@ import {
 import {
   FormBuilder,
   FormGroup,
+  Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { DemandeService } from 'src/app/service/demandes/demande.service';
 
 @Component({
   selector: 'app-form-demande',
@@ -15,30 +19,37 @@ import {
 export class FormDemandeComponent implements OnInit {
 
   //
-  contactForm!:FormGroup;
- 
-  services = [
-    { id: 1, name: "SP CSA" },
-    { id: 2, name: "BS" },
-    { id: 3, name: "B1" },
-    { id: 4, name: "B2" },
-    { id: 5, name: "B3" },
-    { id: 6, name: "CMP/AIBD"}
-  ];
- 
-  constructor(private fb:FormBuilder) {
+  postFormDemande!: FormGroup;
+  //
+  dateDemande = new Date();
+  //
+  constructor(private demandeService: DemandeService,
+              private fb: FormBuilder,
+              private router: Router) {
   }
- 
-  ngOnInit() {
- 
-    this.contactForm = this.fb.group({
-      service: [null]
-    });
+  //
+  ngOnInit(){
+    this.postFormDemande = this.fb.group({
+     matricule:[null, Validators.required],
+     prenom:[null, Validators.required],
+     nom:[null, Validators.required],
+     service:[null, Validators.required],
+     grade:[null, Validators.required],
+     dureePermission:[null, Validators.required],
+     dateDebut:[null, Validators.required],
+     motif:[null, Validators.required],
+     destination:[null, Validators.required]
+    })
   }
- 
-  submit() {
-    console.log("Form Submitted")
-    console.log(this.contactForm.value)
+  //
+  saveAndImprimeNewDemande(){
+    //
+    this.demandeService.createDemande(this.postFormDemande.value).subscribe((res)=>{
+      console.log(res);
+      alert("NOUVELLE DEMANDE ENREGISTREE AVEC SUCCES !");
+      // this.router.navigateByUrl("/demandes");
+      this.router.navigateByUrl("/demandes/form");
+    })
   }
   //
 

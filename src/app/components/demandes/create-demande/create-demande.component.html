@@ -13,62 +13,91 @@
                     <div class="row card">
                         <div class="row col-sm-12 mt-3 ms-1 ml-1">
                             <div class="form-group col-sm-4">
-                                <label for="nom_service">Type Permission <span
+                                <label class="">Matricule <span
+                                    class="text-danger">*</span></label>
+                                <input type="text" name="matricule" required formControlName="matricule" value=""
+                                    class="form-control" placeholder="saisir matricule">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label class="">Prénom <span
+                                    class="text-danger">*</span></label>
+                                <input type="text" name="prenom" required formControlName="prenom" value=""
+                                    class="form-control" placeholder="saisir prénom">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label class="">Nom <span
+                                    class="text-danger">*</span></label>
+                                <input type="text" name="nom" required formControlName="nom" value=""
+                                    class="form-control" placeholder="saisir nom">
+                            </div>
+                        </div>
+
+                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
+                            <!--  -->
+                            <div class="form-group col-sm-6">
+                                <label for="nom_service">Grade <span
+                                        class="text-danger"> *</span></label>
+                                <input type="text" name="grade" required formControlName="grade" 
+                                    class="form-control" placeholder="saisir grade">
+                            </div>
+                            <!--  -->
+                            <div class="form-group col-sm-6">
+                                <label for="nom_service"> Service <span
                                         class="text-danger">*</span></label>
-                                            <select class="form-control" name="typePermission" formControlName="typePermission">
-                                                <option value="">Sectionner type Permission</option>
-                                                <option value="T1">inferieure ou egale a 72 H</option>
-                                                <option value="T2">Superieure a 72 H</option>
-                                                    
+                                            <select class="form-control" name="service" formControlName="service">
+                                                <option [selected]="true" value="">--séctionner service --</option>
+                                                <option value="Secretariat Particulier CSA">SP CSA</option>
+                                                <option value="Brigade Spéciale">BS</option>
+                                                <option value="1ere Brigade">Brigade 1</option>
+                                                <option value="2eme Brigade">Brigade 2</option>
+                                                <option value="3eme Brigade">Brigade 3</option>                                                  
                                             </select>
                                      
                             </div>
+                            <!--  -->
+                        </div>
+                        <!--  -->                           
 
-                            <div class="form-group col-sm-4">
-                                <label for="nom_service">Duree Demande <span
-                                        class="text-danger"></span></label>
-                                <input type="text" name="dureePermission" required formControlName="dureePermission" 
-                                    class="form-control">
+                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
+                            <!--  -->
+                            <div class="form-group col-sm-3">
+                                <label for="nom_service"> Durée <span
+                                        class="text-danger">*</span></label>
+                                            <select class="form-control" name="dureePermission" formControlName="dureePermission">
+                                                <option value="">-- séctionner durée --</option>
+                                                <option value="24">24 H (01 jour)</option>
+                                                <option value="48">48 H (02 jours)</option>
+                                                <option value="72">72 H (03 jours)</option>
+                                                <option value="96">96 H (04 jours)</option>
+                                                <option value="120">120 H (05 jours)</option>
+                                                <option value="144">144 H (06 jours)</option>       
+                                            </select>   
                             </div>
-
-                            <!-- <div class="form-group col-sm-4">
-                                <label for="nom_service">Date Demande <span
-                                        class="text-danger"></span></label>
-                                <input type="text" name="dateDemande" required formControlName="dateDemande" 
-                                    class="form-control" value="">
-                            </div> -->
-
-                            <div class="form-group col-sm-4">
+                            <!--  -->
+                            <div class="form-group col-sm-3">
                                 <label for="nom_service">Date Debut <span
-                                        class="text-danger"></span></label>
+                                        class="text-danger"> *</span></label>
                                 <input type="date" name="dateDebut" required formControlName="dateDebut" 
                                     class="form-control">
                             </div>
                             <!--  -->
-                            <div class="form-group col-sm-4">
-                                <label for="nom_service">Date fin <span
-                                        class="text-danger"></span></label>
-                                <input type="date" name="dateFin" formControlName="dateFin" 
-                                    class="form-control">
+                            <div class="form-group col-sm-3">
+                                <label for="nom_service">Motif<span
+                                        class="text-danger"> *</span></label>
+                                <input type="text" name="motif" formControlName="motif" 
+                                    class="form-control" placeholder="saisir motif demande">
+                            </div>
+                            <!--  -->
+                            <div class="form-group col-sm-3">
+                                <label for="nom_service">Destination<span
+                                        class="text-danger"> *</span></label>
+                                <input type="text" name="destination" formControlName="destination" 
+                                    class="form-control" placeholder="saisir destination">
                             </div>
                         </div>
                         <!--  -->
-                        <div class="row col-sm-12 mt-3 ms-1">
-                            <div class="form-group col-sm-12">
-                                <label for="nom_service">Libelle <span
-                                        class="text-danger"></span></label>
-                                <textarea name="libelle" rows="10"  formControlName="libelle" 
-                                class="form-control"
-                                placeholder="saisir objet permission">
-                                </textarea>
-                            </div>
-                        </div>
-
-                        <!-- <div class="col-12 col-sm-12 mt-3 ms-1">
-                            <label class="">Objet</label>
-                            <textarea name="objet_mention" id="objet_mention" cols="30" rows="10">
-                                            </textarea>
-                        </div> -->
 
                         <div class="row footer col-sm-12 mt-5 ms-1">
                             <div class="form-group col-sm-12 text-right">
