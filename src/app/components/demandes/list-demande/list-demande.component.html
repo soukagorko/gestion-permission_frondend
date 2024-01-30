@@ -42,6 +42,10 @@
                                         <td>{{demande.dureePermission }} </td>
                                         <td>{{demande.dateDebut  | date: "dd-MM-Y" }}</td>
                                         <td class="text-center">
+                                            <!-- <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
+                                                <i class="bi bi-printer ms-1">
+                                                </i>
+                                            </button> -->
                                             <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprime/{{demande.idDemande}}">
                                                 <i class="bi bi-printer ms-1">
                                                 </i>

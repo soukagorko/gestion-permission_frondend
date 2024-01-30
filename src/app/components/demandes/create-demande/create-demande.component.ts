@@ -34,7 +34,9 @@ export class CreateDemandeComponent implements OnInit {
       nom:[null, Validators.required],
       service:[null, Validators.required],
       grade:[null, Validators.required],
+      destinatairePermission:[null, Validators.required],
       dureePermission:[null, Validators.required],
+      lieu:[null, Validators.required], 
       dateDebut:[null, Validators.required],
       motif:[null, Validators.required],
       destination:[null, Validators.required]
