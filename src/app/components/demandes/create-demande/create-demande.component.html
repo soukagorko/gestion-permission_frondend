@@ -11,6 +11,9 @@
             <div style="width:1000px; margin:0px auto">
                 <form [formGroup]="postFormDemande">
                     <div class="row card">
+                        <!-- <div class="col-sm-12">
+                            <span class="badge bg-secondary">Identite de l'interesse</span>
+                        </div> -->
                         <div class="row col-sm-12 mt-3 ms-1 ml-1">
                             <div class="form-group col-sm-4">
                                 <label class="">Matricule <span
@@ -46,7 +49,7 @@
                             <div class="form-group col-sm-6">
                                 <label for="nom_service"> Service <span
                                         class="text-danger">*</span></label>
-                                            <select class="form-control" name="service" formControlName="service">
+                                            <select class="text-center form-control" name="service" formControlName="service">
                                                 <option [selected]="true" value="">--séctionner service --</option>
                                                 <option value="Secretariat Particulier CSA">SP CSA</option>
                                                 <option value="Brigade Spéciale">BS</option>
@@ -58,11 +61,26 @@
                             </div>
                             <!--  -->
                         </div>
-                        <!--  -->                           
-
+                        <!--  -->
                         <div class="row col-sm-12 mt-3 ms-1 ml-1">
                             <!--  -->
-                            <div class="form-group col-sm-3">
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Lieu<span
+                                        class="text-danger"> *</span></label>
+                                <input type="text" name="lieu" formControlName="lieu" 
+                                    class="form-control" placeholder="saisir lieu service">
+                            </div>
+                            <!--  -->
+                            <div class="form-group col-sm-4">
+                                <label for="nom_service">Destinataire <span
+                                        class="text-danger"> *</span></label>
+                                <input type="text" name="destinatairePermission" required formControlName="destinatairePermission" 
+                                    class="form-control" placeholder="saisir destinataire service">
+                            </div>
+                            
+                            <!--  -->
+                            <!--  -->
+                            <div class="form-group col-sm-4">
                                 <label for="nom_service"> Durée <span
                                         class="text-danger">*</span></label>
                                             <select class="form-control" name="dureePermission" formControlName="dureePermission">
@@ -76,21 +94,29 @@
                                             </select>   
                             </div>
                             <!--  -->
-                            <div class="form-group col-sm-3">
+                        </div>
+                        <!--  -->
+                        
+                        <!--  -->
+
+                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
+                            
+                            <!--  -->
+                            <div class="form-group col-sm-4">
                                 <label for="nom_service">Date Debut <span
                                         class="text-danger"> *</span></label>
                                 <input type="date" name="dateDebut" required formControlName="dateDebut" 
                                     class="form-control">
                             </div>
                             <!--  -->
-                            <div class="form-group col-sm-3">
+                            <div class="form-group col-sm-4">
                                 <label for="nom_service">Motif<span
                                         class="text-danger"> *</span></label>
                                 <input type="text" name="motif" formControlName="motif" 
                                     class="form-control" placeholder="saisir motif demande">
                             </div>
                             <!--  -->
-                            <div class="form-group col-sm-3">
+                            <div class="form-group col-sm-4">
                                 <label for="nom_service">Destination<span
                                         class="text-danger"> *</span></label>
                                 <input type="text" name="destination" formControlName="destination" 

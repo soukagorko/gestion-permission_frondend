@@ -21,9 +21,10 @@ import { DemandeService } from 'src/app/service/demandes/demande.service';
 })
 export class ImprimeDemandeComponent implements OnInit {
 
-  //
+//
 id:number=this.activatedRoute.snapshot.params['id'];
 //
+// detailDemandeForm! : FormGroup;
 imprimeDemandeForm! : FormGroup;
 //
 constructor(private activatedRoute: ActivatedRoute,
@@ -35,28 +36,30 @@ constructor(private activatedRoute: ActivatedRoute,
 ngOnInit(){
   //
   this.imprimeDemandeForm = this.fb.group({
-    //
-    matricule:[null, Validators.required],
-      prenom:[null, Validators.required],
-      nom:[null, Validators.required],
-      service:[null, Validators.required],
-      grade:[null, Validators.required],
-      dureePermission:[null, Validators.required],
-      dateDebut:[null, Validators.required],
-      motif:[null, Validators.required],
-      destination:[null, Validators.required]
-      //
+    // this.detailDemandeForm = this.fb.group({
+    typePermission:[null, Validators.required],
+    dureePermission:[null, Validators.required],
+    datePermission:[null, Validators.required],
+    dateDebut:[null, Validators.required],
+    dateFin:[null, Validators.required],
+    libelle:[null, Validators.required]
   })
   //
-  this.imprimeDataDemandeById();
+  this.getDataDemandeById();
 }
 //
-imprimeDataDemandeById(){
+getDataDemandeById(){
   this.demandeService.getDemandeById(this.id).subscribe((res)=>{
     console.log(res);
     this.imprimeDemandeForm.patchValue(res);
+    // this.detailDemandeForm.patchValue(res);
   })
 }
+//
+printPage(){
+  window.print();
+}
+
 //
 
 }
