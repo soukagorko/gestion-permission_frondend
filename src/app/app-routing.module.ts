@@ -34,7 +34,9 @@ const routes: Routes = [
   { path: "demandes/form", component: FormDemandeComponent},
   //
   { path: "demandes/imprime/:id", component: ImprimeDemandeComponent},
-
+  { path: "demandes/imprimer/:id", component: ImprimeDemandeComponent},
+  //
+ 
 ];
 
 @NgModule({

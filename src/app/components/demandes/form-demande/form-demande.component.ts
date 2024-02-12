@@ -17,6 +17,26 @@ import { DemandeService } from 'src/app/service/demandes/demande.service';
   styleUrls: ['./form-demande.component.css']
 })
 export class FormDemandeComponent implements OnInit {
+  //
+     //##############################################
+     dateDebut: string = '';
+     dureePermission: number = 0;
+     dateFin: string = '';
+     error: string = '';
+     //
+   
+     onSubmit(): void {
+       const date = new Date(this.dateDebut);
+       if (!isNaN(date.getTime())) {
+         date.setHours(date.getHours() + this.dureePermission);
+         this.dateFin = date.toISOString().slice(0, 19).replace('T', ' ');
+         this.error = '';
+       } else {
+         this.error = 'Format de date invalide. Utilisez yyyy-MM-dd HH:mm:ss';
+         this.dateFin = '';
+       }
+     }
+     //
 
   //
   postFormDemande!: FormGroup;
@@ -43,11 +63,9 @@ export class FormDemandeComponent implements OnInit {
   }
   //
   saveAndImprimeNewDemande(){
-    //
     this.demandeService.createDemande(this.postFormDemande.value).subscribe((res)=>{
       console.log(res);
       alert("NOUVELLE DEMANDE ENREGISTREE AVEC SUCCES !");
-      // this.router.navigateByUrl("/demandes");
       this.router.navigateByUrl("/demandes/form");
     })
   }

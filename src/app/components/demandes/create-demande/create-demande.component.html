@@ -11,9 +11,7 @@
             <div style="width:1000px; margin:0px auto">
                 <form [formGroup]="postFormDemande">
                     <div class="row card">
-                        <!-- <div class="col-sm-12">
-                            <span class="badge bg-secondary">Identite de l'interesse</span>
-                        </div> -->
+                    <!--  -->
                         <div class="row col-sm-12 mt-3 ms-1 ml-1">
                             <div class="form-group col-sm-4">
                                 <label class="">Matricule <span
@@ -76,14 +74,12 @@
                                         class="text-danger"> *</span></label>
                                 <input type="text" name="destinatairePermission" required formControlName="destinatairePermission" 
                                     class="form-control" placeholder="saisir destinataire service">
-                            </div>
-                            
-                            <!--  -->
+                            </div>                           
                             <!--  -->
                             <div class="form-group col-sm-4">
                                 <label for="nom_service"> Durée <span
                                         class="text-danger">*</span></label>
-                                            <select class="form-control" name="dureePermission" formControlName="dureePermission">
+                                            <select class="form-control" [(ngModel)]="dureePermission" name="dureePermission" formControlName="dureePermission">
                                                 <option value="">-- séctionner durée --</option>
                                                 <option value="24">24 H (01 jour)</option>
                                                 <option value="48">48 H (02 jours)</option>
@@ -96,8 +92,6 @@
                             <!--  -->
                         </div>
                         <!--  -->
-                        
-                        <!--  -->
 
                         <div class="row col-sm-12 mt-3 ms-1 ml-1">
                             
@@ -105,7 +99,7 @@
                             <div class="form-group col-sm-4">
                                 <label for="nom_service">Date Debut <span
                                         class="text-danger"> *</span></label>
-                                <input type="date" name="dateDebut" required formControlName="dateDebut" 
+                                <input type="date" name="dateDebut" [(ngModel)]="dateDebut" required formControlName="dateDebut" 
                                     class="form-control">
                             </div>
                             <!--  -->
@@ -123,16 +117,16 @@
                                     class="form-control" placeholder="saisir destination">
                             </div>
                         </div>
-                        <!--  -->
-
+                        <!--  -->                       
                         <div class="row footer col-sm-12 mt-5 ms-1">
                             <div class="form-group col-sm-12 text-right">
-                                <button type="submit" (click)="saveNewDemande()" 
+                                <button type="submit" (click)="saveDemande()" 
                                     class="btn btn-outline-success col-sm-12">
                                     <i class="fas fa-check"></i>
                                     Enregistrer
                                 </button>
                             </div>
+                        <!--  -->
                         </div>
                         &nbsp;
                         &nbsp;
@@ -143,7 +137,6 @@
 
         </div>
     </div>
-
    
 </font>
 
