@@ -15,9 +15,9 @@ export class DemandeService {
   constructor(private http: HttpClient) { }
   //
   createDemande(demande: any): Observable<any>{
-    return this.http.post(BASIC_URL + "api/demandes/", demande);
+    return this.http.post(BASIC_URL + "api/demandes/create", demande);
   }
-   //
+  //
    listAllDemandes(): Observable<any>{
     return this.http.get(BASIC_URL + "api/demandes/");
   }
@@ -30,7 +30,6 @@ export class DemandeService {
     return this.http.get(BASIC_URL + "api/demandes/"+id);
   }
   //
-  //
   getDetailDemande(id: number): Observable<any>{
     return this.http.get(BASIC_URL + "api/demandes/"+id);
   }
@@ -39,8 +38,11 @@ export class DemandeService {
     return this.http.put(BASIC_URL + "api/demandes/"+id, demande);
   }
   //
-  //
   imprimeDemandeById(id: number): Observable<any>{
     return this.http.get(BASIC_URL + "api/demandes/imprime"+id);
+  }
+  //
+  getPDF(id: number): Observable<any>{
+    return this.http.get(BASIC_URL + "api/demandes/"+id);
   }
 }

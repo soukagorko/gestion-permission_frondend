@@ -53,6 +53,13 @@ getDataDemandeById(){
   })
 }
 //
+// genererPDF(){
+//   this.demandeService.getPDF(this.id).subscribe((res)=>{
+//     console.log(res);
+//     this.detailDemandeForm.patchValue(res);
+//   })
+// }
+// //
 printPage(){
   window.print();
 }

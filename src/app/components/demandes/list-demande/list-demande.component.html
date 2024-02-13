@@ -23,29 +23,37 @@
                                 class="table table-striped table-bordered text-center datatable">
                                 <thead>
                                     <tr class="text-white" style="background-color: darkgray;">
-                                        <th style="background-color: antiquewhite;">ID</th>
+                                        <!-- <th style="background-color: antiquewhite;">ID</th> -->
                                         <th style="background-color: antiquewhite;">MATRICULE</th>
                                         <th style="background-color: antiquewhite;">NOM</th>
                                         <th style="background-color: antiquewhite;">SERVICE</th>
                                         <th style="background-color: antiquewhite;">DUREE</th>
                                         <th style="background-color: antiquewhite;">DATE DEBUT</th>
+                                        <th style="background-color: antiquewhite;">DATE FIN</th>
                                         <th style="background-color: antiquewhite;">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
                                         *ngFor="let demande of dataDemandes">
-                                        <td>{{demande.idDemande }}</td>
+                                        <!-- <td>{{demande.idDemande }}</td> -->
                                         <td>{{demande.matricule }}</td>
                                         <td>{{demande.prenom }} {{demande.nom }}</td>
                                         <td>{{demande.service }} </td>
-                                        <td>{{demande.dureePermission }} </td>
-                                        <td>{{demande.dateDebut  | date: "dd-MM-Y" }}</td>
+                                        <td class="">
+                                            <small class="badge bg-warning">{{demande.dureePermission }} heures</small>
+                                        </td>
+                                        <td class="text-warning">
+                                            <small class="badge bg-secondary">
+                                                {{demande.dateDebut  | date: "dd-MM-Y" }}
+                                            </small>
+                                        </td>
+                                        <td class="text-warning">
+                                            <small class="badge bg-secondary">
+                                                {{demande.dateFin  | date: "dd-MM-Y" }}
+                                            </small>
+                                        </td>
                                         <td class="text-center">
-                                            <!-- <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
-                                                <i class="bi bi-printer ms-1">
-                                                </i>
-                                            </button> -->
                                             <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprime/{{demande.idDemande}}">
                                                 <i class="bi bi-printer ms-1">
                                                 </i>

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'login-registration-form-using-spring-boot-angular';
+  title = 'GESTION-PERMISSION:FRONTEND';
+  
 }

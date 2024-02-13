@@ -1,145 +1,25 @@
-<font face="time new roman">
-    <div class="card container col-sm-12 mt-5">
 
-        <div class="card-header">
-            <h3 class='text-center'>
-                <i class="fas fa-sign-in-alt mr-2">
-                </i>Formulaire demande de permission
-            </h3>
-        </div>
-        
-        <div class="card-body">
-            <div style="width:1000px; margin:0px auto">
-                    <div class="row card">
-                        <!-- <form [formGroup]="contactForm" (ngSubmit)="submit()"></form> -->
-                        <!--  -->
-                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
-
-                            <div class="form-group col-sm-4">
-                                <label for="nom_service">Matricule <span
-                                    class="text-danger"> *</span></label>
-                                <input type="text" name="matricule" required formControlName="matricule" value=""
-                                    class="form-control" placeholder="saisir matricule">
-                            </div>
-
-                            <div class="form-group col-sm-4">
-                                <label for="nom_service">Prénom <span
-                                    class="text-danger"> *</span></label>
-                                <input type="text" name="prenom" required formControlName="prenom" value=""
-                                    class="form-control" placeholder="saisir prenom">
-                            </div>
-
-                            <div class="form-group col-sm-4">
-                                <label for="nom_service">Nom <span
-                                    class="text-danger"> *</span></label>
-                                <input type="text" name="nom" required formControlName="nom" value=""
-                                    class="form-control" placeholder="saisir nom">
-                            </div>
-                        </div>
-                        <!--  -->
-                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
-                            <!--  -->
-                            <div class="form-group col-sm-6">
-                                <label for="nom_service">Grade <span
-                                        class="text-danger"> *</span></label>
-                                <input type="text" name="grade" required formControlName="grade" 
-                                    class="form-control" placeholder="saisir grade">
-                            </div>
-                            <!--  -->
-                            <div class="form-group col-sm-6">
-                                <label for="nom_service"> Service <span
-                                        class="text-danger">*</span></label>
-                                            <select class="form-control" name="service" formControlName="service">
-                                                <option [selected]="true" value="">--séctionner service --</option>
-                                                <option value="Secretariat Particulier CSA">SP CSA</option>
-                                                <option value="Brigade Spéciale">BS</option>
-                                                <option value="1ere Brigade">Brigade 1</option>
-                                                <option value="2eme Brigade">Brigade 2</option>
-                                                <option value="3eme Brigade">Brigade 3</option>                                                  
-                                            </select>
-                                     
-                            </div>
-                            <!--  -->
-                        </div>
-                        <!--  -->
-                        <div class="row col-sm-12 mt-3 ms-1 ml-1">
-                            <!--  -->
-                            <div class="form-group col-sm-3">
-                                <label for="nom_service"> Durée <span
-                                        class="text-danger">*</span></label>
-                                            <select class="form-control text-center" name="dureePermission" formControlName="dureePermission">
-                                                <option value="">-- séctionner durée --</option>
-                                                <option value="24">24 H (01 jour)</option>
-                                                <option value="48">48 H (02 jours)</option>
-                                                <option value="72">72 H (03 jours)</option>
-                                                <option value="96">96 H (04 jours)</option>
-                                                <option value="120">120 H (05 jours)</option>
-                                                <option value="144">144 H (06 jours)</option>       
-                                            </select>   
-                            </div>
-                            <!--  -->
-                            <div class="form-group col-sm-3">
-                                <label for="nom_service">Date Debut <span
-                                        class="text-danger"> *</span></label>
-                                <input type="date" name="dateDebut" required formControlName="dateDebut" 
-                                    class="form-control">
-                            </div>
-                            <!--  -->
-                            <div class="form-group col-sm-3">
-                                <label for="nom_service">Motif<span
-                                        class="text-danger"> *</span></label>
-                                <input type="text" name="motif" formControlName="motif" 
-                                    class="form-control" placeholder="saisir motif demande">
-                            </div>
-                            <!--  -->
-                            <div class="form-group col-sm-3">
-                                <label for="nom_service">Destination<span
-                                        class="text-danger"> *</span></label>
-                                <input type="text" name="destination" formControlName="destination" 
-                                    class="form-control" placeholder="saisir destination">
-                            </div>
-                        </div>
-                        <!--  -->
-
-                        <div class="row footer col-sm-12 mt-5 ms-1">
-                            <!--  -->
-                            <!-- <div class="form-group col-sm-3 ms-20">
-                                <button type="submit"
-                                    class="btn btn-outline-success col-sm-12">
-                                    <a routerLink="/demandes" class="text-primary ms-2"> <i class="bi bi-plus"></i>
-                                        Retour </a>
-                                </button>
-                            </div> -->
-                            <!--  -->
-                            <div class="form-group col-sm-3">
-                                <button type="submit" (click)="saveAndImprimeNewDemande()" 
-                                    class="btn btn-outline-success col-sm-12">
-                                    <i class="fas fa-check"></i>
-                                    Enregistrer / Imprimer
-                                </button>
-                            </div>
-                        </div>
-                        &nbsp;
-                        &nbsp;
-
-                    </div>
-                    <!--  -->
-                    <div class="form-group col-sm-2 text-end">
-                        <a routerLink="/demandes" class="text-primary ms-2"> <i class="bi bi-0-circle"></i>
-                            Retour</a>
-                    </div>
-                    <!--  -->
-                        &nbsp;
-                        &nbsp;
-                    </div>
-
-            </div>
-
-        </div>
-
-        
-    
-</font>
+<!--  -->
+<div>
+    <h2>Ajouter des heures à une date</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label for="dateDebut">Date (yyyy-MM-dd HH:mm:ss):</label><br>
+      <input type="date" id="dateDebut" name="dateDebut" [(ngModel)]="dateDebut" required><br>
+      <label for="dureePermission">Heures à ajouter:</label><br>
+      <input type="number" id="dureePermission" name="dureePermission" [(ngModel)]="dureePermission" required><br>
+      <button type="submit">Ajouter</button>
+    </form>
+  
+    <div *ngIf="dateFin">
+      <h2>Résultat</h2>
+      <p>Nouvelle date: {{ dateFin }}</p>
+    </div>
+  
+    <div *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+  </div>
+<!--  -->
 
 
 

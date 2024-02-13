@@ -25,6 +25,7 @@ export class ImprimeDemandeComponent implements OnInit {
 id:number=this.activatedRoute.snapshot.params['id'];
 //
 // detailDemandeForm! : FormGroup;
+pdfDemandeForm! : FormGroup;
 imprimeDemandeForm! : FormGroup;
 //
 constructor(private activatedRoute: ActivatedRoute,
@@ -35,8 +36,8 @@ constructor(private activatedRoute: ActivatedRoute,
 //
 ngOnInit(){
   //
-  this.imprimeDemandeForm = this.fb.group({
-    // this.detailDemandeForm = this.fb.group({
+  // this.imprimeDemandeForm = this.fb.group({
+    this.pdfDemandeForm = this.fb.group({
     typePermission:[null, Validators.required],
     dureePermission:[null, Validators.required],
     datePermission:[null, Validators.required],
@@ -59,7 +60,13 @@ getDataDemandeById(){
 printPage(){
   window.print();
 }
-
+//
+genererPDF(){
+  this.demandeService.getPDF(this.id).subscribe((res)=>{
+    console.log(res);
+    this.pdfDemandeForm.patchValue(res);
+  })
+}
 //
 
 }

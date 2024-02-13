@@ -18,10 +18,14 @@ import {
   EditDemandeComponent,
 } from './components/demandes/edit-demande/edit-demande.component';
 import {
+  FormDemandeComponent,
+} from './components/demandes/form-demande/form-demande.component';
+import {
+  ImprimeDemandeComponent,
+} from './components/demandes/imprime-demande/imprime-demande.component';
+import {
   ListDemandeComponent,
 } from './components/demandes/list-demande/list-demande.component';
-import { FormDemandeComponent } from './components/demandes/form-demande/form-demande.component';
-import { ImprimeDemandeComponent } from './components/demandes/imprime-demande/imprime-demande.component';
 
 @NgModule({
   declarations: [

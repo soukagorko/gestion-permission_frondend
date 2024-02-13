@@ -20,12 +20,28 @@ export class CreateDemandeComponent implements OnInit {
    //
    postFormDemande!: FormGroup;
    //
-   dateDemande = new Date();
+  matricule: string = '';
+  prenom: string = '';
+  nom: string = '';
+  grade: string = '';
+  service: string = '';
+  lieu: string = '';
+  destinatairePermission: string = '';
+  objet: string = '';
+  motif: string = '';
+  destination: string = '';
+  // dateDebut: string = '';
+  dureePermission: number = 0;
+  // dateFin: string = '';
+  dateDebut!: string | number | Date;
+  dateFin!: string | number | Date;
+
    //
    constructor(private demandeService: DemandeService,
                private fb: FormBuilder,
                private router: Router) {
    }
+
    //
    ngOnInit(){
      this.postFormDemande = this.fb.group({
@@ -38,19 +54,20 @@ export class CreateDemandeComponent implements OnInit {
       dureePermission:[null, Validators.required],
       lieu:[null, Validators.required], 
       dateDebut:[null, Validators.required],
+      objet:[null, Validators.required],
       motif:[null, Validators.required],
       destination:[null, Validators.required]
      })
+     //
    }
    //
-   saveNewDemande(){
-     //
-     this.demandeService.createDemande(this.postFormDemande.value).subscribe((res)=>{
+   saveDemande(){
+      this.demandeService.createDemande(this.postFormDemande.value).subscribe((res)=>{
        console.log(res);
        alert("NOUVELLE DEMANDE ENREGISTREE AVEC SUCCES !");
        this.router.navigateByUrl("/demandes");
      })
    }
-   //
 
+   //
 }
