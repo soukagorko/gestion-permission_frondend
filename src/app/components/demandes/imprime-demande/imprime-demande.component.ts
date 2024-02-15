@@ -5,7 +5,6 @@ import {
 import {
   FormBuilder,
   FormGroup,
-  Validators,
 } from '@angular/forms';
 import {
   ActivatedRoute,
@@ -20,13 +19,14 @@ import { DemandeService } from 'src/app/service/demandes/demande.service';
   styleUrls: ['./imprime-demande.component.css']
 })
 export class ImprimeDemandeComponent implements OnInit {
+  //
+// const BASIC_URL = ["http://localhost:8085/"];
+//
 
 //
 id:number=this.activatedRoute.snapshot.params['id'];
 //
-// detailDemandeForm! : FormGroup;
-pdfDemandeForm! : FormGroup;
-imprimeDemandeForm! : FormGroup;
+detailDemandeForm! : FormGroup;
 //
 constructor(private activatedRoute: ActivatedRoute,
             private demandeService: DemandeService,
@@ -36,37 +36,26 @@ constructor(private activatedRoute: ActivatedRoute,
 //
 ngOnInit(){
   //
-  // this.imprimeDemandeForm = this.fb.group({
-    this.pdfDemandeForm = this.fb.group({
-    typePermission:[null, Validators.required],
-    dureePermission:[null, Validators.required],
-    datePermission:[null, Validators.required],
-    dateDebut:[null, Validators.required],
-    dateFin:[null, Validators.required],
-    libelle:[null, Validators.required]
-  })
-  //
   this.getDataDemandeById();
 }
 //
 getDataDemandeById(){
   this.demandeService.getDemandeById(this.id).subscribe((res)=>{
     console.log(res);
-    this.imprimeDemandeForm.patchValue(res);
     // this.detailDemandeForm.patchValue(res);
+    this.router.navigateByUrl("/demandes/imprimer/{id}");
+    // this.http.get(BASIC_URL + "api/demandes/imprimer"+id);
   })
 }
 //
-printPage(){
-  window.print();
-}
-//
-genererPDF(){
-  this.demandeService.getPDF(this.id).subscribe((res)=>{
+imprimerDemandeOLL(){
+  // this.demandeService.createDemande(this.postFormDemande.value).subscribe((res)=>{
+  //  console.log(res);
+  //  alert("NOUVELLE DEMANDE ENREGISTREE AVEC SUCCES !");
+  this.demandeService.getDemandeById(this.id).subscribe((res)=>{
     console.log(res);
-    this.pdfDemandeForm.patchValue(res);
-  })
+   this.router.navigateByUrl("/demandes/imprimer/{id}");
+ })
 }
-//
 
 }
