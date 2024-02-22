@@ -2,6 +2,7 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { DemandeService } from 'src/app/service/demandes/demande.service';
 
@@ -14,7 +15,8 @@ export class ListDemandeComponent implements OnInit {
   //
   dataDemandes:any = [];
   //
-  constructor(private demandeService: DemandeService){}
+  constructor(private demandeService: DemandeService,
+              private activatedRoute: ActivatedRoute){}
   //
   ngOnInit(){
     this.getAllDataDemandes();
@@ -35,5 +37,11 @@ export class ListDemandeComponent implements OnInit {
   })
 }
 //
-
+imprimerDemande(id:number){
+  console.log(id);
+  this.demandeService.imprimeDemande(id).subscribe((res)=>{
+    console.log(res);
+  })
+}
+//
 }

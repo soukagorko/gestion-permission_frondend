@@ -54,15 +54,20 @@
                                             </small>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprime/{{demande.idDemande}}">
+                                            <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprimer/{{demande.idDemande}}">
                                                 <i class="bi bi-printer ms-1">
                                                 </i>
                                             </button>
                                             &nbsp;
-                                            <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
+                                            <!-- <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
+                                                <i class="bi bi-eye ms-1">
+                                                </i>
+                                            </button> -->
+                                            <button class="btn btn-sm btn-outline-warning" (click)="imprimerDemande(demande.idDemande)">
                                                 <i class="bi bi-eye ms-1">
                                                 </i>
                                             </button>
+                                            
                                             <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idDemande}}">
                                                 <i class="bi bi-pencil ms-1">
                                                 </i>
