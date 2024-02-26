@@ -23,7 +23,6 @@
                                 class="table table-striped table-bordered text-center datatable">
                                 <thead>
                                     <tr class="text-white" style="background-color: darkgray;">
-                                        <!-- <th style="background-color: antiquewhite;">ID</th> -->
                                         <th style="background-color: antiquewhite;">MATRICULE</th>
                                         <th style="background-color: antiquewhite;">NOM</th>
                                         <th style="background-color: antiquewhite;">SERVICE</th>
@@ -36,7 +35,6 @@
                                 <tbody>
                                     <tr
                                         *ngFor="let demande of dataDemandes">
-                                        <!-- <td>{{demande.idDemande }}</td> -->
                                         <td>{{demande.matricule }}</td>
                                         <td>{{demande.prenom }} {{demande.nom }}</td>
                                         <td>{{demande.service }} </td>
@@ -45,7 +43,7 @@
                                         </td>
                                         <td class="text-warning">
                                             <small class="badge bg-secondary">
-                                                {{demande.dateDebut  | date: "dd-MM-Y" }}
+                                                {{demande.dateDebut | date: "dd-MM-Y" }}
                                             </small>
                                         </td>
                                         <td class="text-warning">
@@ -54,15 +52,7 @@
                                             </small>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary" routerLink="/demandes/imprimer/{{demande.idDemande}}">
-                                                <i class="bi bi-printer ms-1">
-                                                </i>
-                                            </button>
                                             &nbsp;
-                                            <!-- <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
-                                                <i class="bi bi-eye ms-1">
-                                                </i>
-                                            </button> -->
                                             <button class="btn btn-sm btn-outline-warning" (click)="imprimerDemande(demande.idDemande)">
                                                 <i class="bi bi-eye ms-1">
                                                 </i>
