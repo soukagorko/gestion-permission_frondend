@@ -38,10 +38,13 @@ export class DemandeService {
     return this.http.put(BASIC_URL + "api/demandes/"+id, demande);
   }
   //
+<<<<<<< HEAD
   // imprimeDemande(id: number): Observable<any>{
   //   return this.http.get(BASIC_URL + "api/demandes/imprimer/"+id);
   // }
   //
+=======
+>>>>>>> 340d271f979b2c63f19f7a394e27b86933d01e1a
   imprimeDemande(id: number): Observable<Blob>{
     return this.http.get(BASIC_URL + "api/demandes/imprimer/"+id, {responseType: 'blob'});
   }

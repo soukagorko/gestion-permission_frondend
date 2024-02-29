@@ -40,6 +40,7 @@ export class ListDemandeComponent implements OnInit {
   })
 }
 //
+<<<<<<< HEAD
 // imprimerDemande(id:number){
 //   console.log(id);
 //   this.demandeService.imprimeDemande(id).subscribe((res)=>{
@@ -55,5 +56,15 @@ imprimerDemande(id: number) {
     window.open(fileURL);
   })
 }
+=======
+  imprimerDemande(id: number) {
+    console.log(id);
+    this.demandeService.imprimeDemande(id).subscribe((res) => {
+      const file = new Blob([res], { type: "application/pdf" });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+    })
+  }
+>>>>>>> 340d271f979b2c63f19f7a394e27b86933d01e1a
 //
 }
