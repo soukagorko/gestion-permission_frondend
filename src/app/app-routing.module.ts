@@ -25,8 +25,6 @@ const routes: Routes = [
   { path: "demandes/edit/:id", component: EditDemandeComponent},
   { path: "demandes/detail/:id", component: DetailDemandeComponent},
   //
-  // { path: "demandes/form", component: FormDemandeComponent},
-  //
  
 ];
 

@@ -15,6 +15,9 @@ export class ListDemandeComponent implements OnInit {
   //
   dataDemandes:any = [];
   //
+  //
+// const fileURL = ["http://localhost:8085/"];
+//
   constructor(private demandeService: DemandeService,
               private activatedRoute: ActivatedRoute){}
   //
@@ -37,10 +40,19 @@ export class ListDemandeComponent implements OnInit {
   })
 }
 //
-imprimerDemande(id:number){
+// imprimerDemande(id:number){
+//   console.log(id);
+//   this.demandeService.imprimeDemande(id).subscribe((res)=>{
+//     console.log(res);
+//   })
+// }
+//
+imprimerDemande(id: number) {
   console.log(id);
-  this.demandeService.imprimeDemande(id).subscribe((res)=>{
-    console.log(res);
+  this.demandeService.imprimeDemande(id).subscribe((res) => {
+    const file = new Blob([res], { type: "application/pdf" });
+    const fileURL = URL.createObjectURL(file);
+    window.open(fileURL);
   })
 }
 //
