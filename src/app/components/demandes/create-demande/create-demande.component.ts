@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from 'src/app/service/auth/auth.service';
 import { DemandeService } from 'src/app/service/demandes/demande.service';
 
 @Component({
@@ -39,7 +40,8 @@ export class CreateDemandeComponent implements OnInit {
    //
    constructor(private demandeService: DemandeService,
                private fb: FormBuilder,
-               private router: Router) {
+               private router: Router,
+              public authService: AuthService) {
    }
 
    //
