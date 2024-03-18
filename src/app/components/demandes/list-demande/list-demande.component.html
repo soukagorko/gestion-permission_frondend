@@ -52,16 +52,24 @@
                                             </small>
                                         </td>
                                         <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary" (click)="imprimerDemande(demande.idDemande)">
+                                                Demande <i class="bi bi-printer ms-1">
+                                                </i>
+                                            </button>
                                             &nbsp;
-                                            <button class="btn btn-sm btn-outline-warning" (click)="imprimerDemande(demande.idDemande)">
+                                            <button class="btn btn-sm btn-outline-info" (click)="imprimerPermission(demande.idDemande)">
+                                                Permission <i class="bi bi-printer ms-1">
+                                                </i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm btn-outline-warning" routerLink="/demandes/detail/{{demande.idDemande}}">
                                                 <i class="bi bi-eye ms-1">
                                                 </i>
-                                            </button>
-                                            
-                                            <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idDemande}}">
+                                            </button> -->
+                                            <!-- <button class="btn btn-sm btn-outline-success ms-1" routerLink="/demandes/edit/{{demande.idDemande}}">
                                                 <i class="bi bi-pencil ms-1">
                                                 </i>
-                                            </button>
+                                            </button> -->
+
                                             <form action method="post"
                                                 class="d-inline  ms-1">
                                                 <button type="submit"

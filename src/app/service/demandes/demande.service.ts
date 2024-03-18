@@ -41,4 +41,9 @@ export class DemandeService {
   imprimeDemande(id: number): Observable<Blob>{
     return this.http.get(BASIC_URL + "api/demandes/imprimer/"+id, {responseType: 'blob'});
   }
+  //
+  imprimePermission(id: number): Observable<Blob>{
+    return this.http.get(BASIC_URL + "api/permissions/imprimer/"+id, {responseType: 'blob'});
+  } 
+//
 }

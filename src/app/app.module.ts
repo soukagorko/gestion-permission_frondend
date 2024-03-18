@@ -1,4 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
   FormsModule,
@@ -8,6 +11,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {
+  AdminTemplateComponent,
+} from './components/admin-template/admin-template.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import {
   CreateDemandeComponent,
 } from './components/demandes/create-demande/create-demande.component';
@@ -20,6 +27,9 @@ import {
 import {
   ListDemandeComponent,
 } from './components/demandes/list-demande/list-demande.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,11 @@ import {
     CreateDemandeComponent,
     ListDemandeComponent,
     EditDemandeComponent,
-    DetailDemandeComponent
+    DetailDemandeComponent,
+    LoginComponent,
+    AdminTemplateComponent,
+    NavbarComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +50,9 @@ import {
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AppHttpInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
