@@ -15,7 +15,7 @@ export class DemandeService {
   constructor(private http: HttpClient) { }
   //
   createDemande(demande: any): Observable<any>{
-    return this.http.post(BASIC_URL + "api/demandes/create", demande);
+    return this.http.post(BASIC_URL + "api/demandes/", demande);
   }
   //
    listAllDemandes(): Observable<any>{

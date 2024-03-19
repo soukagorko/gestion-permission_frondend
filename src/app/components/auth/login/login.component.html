@@ -21,6 +21,10 @@
           <input type="password"  class="form-control" placeholder="Mot de Passe" formControlName="password">
         </div>
 
+        <div class="alert alert-danger" role="alert" *ngIf="erreurConnexion">
+          Erreur lors de la connexion !
+        </div>
+
         <div class="card-footer text-body-secondary mt-3">
           <button type="submit" class="btn btn-outline-success col-sm-12">
             <i class="fa fa-check fa-fw"></i> Se connecter

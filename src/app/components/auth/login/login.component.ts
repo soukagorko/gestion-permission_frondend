@@ -18,6 +18,7 @@ import { AuthService } from 'src/app/service/auth/auth.service';
 export class LoginComponent implements OnInit {
 
   formLogin!: FormGroup;
+  erreurConnexion = false;
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
       },
       error: err => {
         console.log(err);
+        this.erreurConnexion = true;
     }
   })
 }
